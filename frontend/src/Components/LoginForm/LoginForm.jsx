@@ -12,7 +12,7 @@ const LoginForm = () => {
                 <h1>Videofy</h1>
 
                 <div className='input-box'>
-                    <input type='text' placeholder='Username' required />
+                    <input type='text' placeholder='Email' required />
                     <FaUser className='icon'/>
                 </div>
 
