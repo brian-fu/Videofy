@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './LoginForm.css';
 
 // React Icons
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 
@@ -34,7 +34,11 @@ const LoginForm = () => {
                 </div>
 
                 <button type='button' className='google-button'>
-                    <FcGoogle className='google-icon' /> Continue with Google
+                    <FcGoogle className='other-icon' /> Continue with Google
+                </button>
+
+                <button type='button' className='google-button'>
+                    <FaGithub className='other-icon' /> Continue with GitHub
                 </button>
 
                 <div className='register-link'>
