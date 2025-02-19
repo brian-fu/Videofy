@@ -89,6 +89,41 @@
     margin: 0 auto;
 }
 
+.wrapper .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.wrapper .separator::before,
+.wrapper .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #fff;
+}
+
+.wrapper .separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.wrapper .separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.wrapper .google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #333;
+    margin-top: 20px;
+}
+
+.wrapper .google-icon {
+    margin-right: 10px;
+}
+
 .wrapper .register-link {
     font-size: 14.5px;
     text-align: center;

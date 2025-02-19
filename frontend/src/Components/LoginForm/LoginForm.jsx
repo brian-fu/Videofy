@@ -4,6 +4,7 @@ import './LoginForm.css';
 
 // React Icons
 import { FaUser, FaLock } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 
 const LoginForm = () => {
@@ -27,6 +28,14 @@ const LoginForm = () => {
                 </div>
 
                 <button type='submit'>Login</button>
+
+                <div className='separator'>
+                    <span>or</span>
+                </div>
+
+                <button type='button' className='google-button'>
+                    <FcGoogle className='google-icon' /> Continue with Google
+                </button>
 
                 <div className='register-link'>
                     <p>Don't have an account? <Link to="/create-account">Register</Link></p>
