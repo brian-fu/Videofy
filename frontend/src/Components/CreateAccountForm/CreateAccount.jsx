@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LoginForm.css';
+import './CreateAccount.css';
 
 // React Icons
 import { FaUser, FaLock } from "react-icons/fa";
 
 
-const LoginForm = () => {
+const CreateAccount = () => {
     return (
         <div className='wrapper'>
             <form action=''>
@@ -22,18 +22,19 @@ const LoginForm = () => {
                     <FaLock className='icon'/>
                 </div>
 
-                <div className='remember-me'>
-                    <label><input type='checkbox' />Remember me</label>
+                <div className='input-box'>
+                    <input type='password' placeholder='Re-type Password' required />
+                    <FaLock className='icon'/>
                 </div>
 
-                <button type='submit'>Login</button>
+                <button type='submit'>Create Account</button>
 
-                <div className='register-link'>
-                    <p>Don't have an account? <Link to="/create-account">Register</Link></p>
+                <div className='already-registered-link'>
+                    <p>Already have an account? <Link to="/">Login</Link></p>
                 </div>
             </form>
         </div>
     );
 }
 
-export default LoginForm;
+export default CreateAccount;
