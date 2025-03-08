@@ -12,7 +12,7 @@
 .wrapper h1 {
     font-weight: 700;
     font-size: 50px;
-    margin-bottom: -5%;
+    margin-bottom: -10%;
     text-align: center;
 }
 
@@ -172,7 +172,7 @@
     cursor: pointer;
     font-size: 20px;
     vertical-align: middle;
-    margin-left: 50px;
+    margin-left: -250px;
     position: relative;
-    top: -45px;
+    top: -20px;
 }
