@@ -50,4 +50,5 @@
 .about-content h2 {
     color: black !important;
     margin-bottom: 10px !important;
+    font-weight: bold;
 }

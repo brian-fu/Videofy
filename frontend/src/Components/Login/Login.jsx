@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CiCircleInfo } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
 import About from '../About/About';
 import './Login.css';
 
@@ -15,12 +16,12 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [showAbout, setShowAbout] = useState(false);
-
+    const navigate = useNavigate();
     const handleEmailLogin = async (e) => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            alert('Logged in successfully');
+            navigate('/upload');
             setErrorMessage('');
         } catch (error) {
             console.error('Error logging in with email:', error);
@@ -46,7 +47,7 @@ const Login = () => {
     const handleGoogleLogin = async () => {
         try {
             await signInWithPopup(auth, googleProvider);
-            alert('Logged in with Google');
+            navigate('/upload');
         } catch (error) {
             console.error('Error logging in with Google:', error);
             setErrorMessage('An error occurred while logging in with Google. Please try again.');
@@ -56,7 +57,7 @@ const Login = () => {
     const handleGithubLogin = async () => {
         try {
             await signInWithPopup(auth, githubProvider);
-            alert('Logged in with GitHub');
+            navigate('/upload');
         } catch (error) {
             console.error('Error logging in with GitHub:', error);
             setErrorMessage('An error occurred while logging in with GitHub. Please try again.');

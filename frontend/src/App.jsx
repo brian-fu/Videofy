@@ -13,7 +13,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/upload" element={<UploadPdf />} />
+        <Route path="/upload-pdf" element={<UploadPdf />} />
+        <Route path="/video-preview" element={<VideoPreview />} />
       </Routes>
     </Router>
   )

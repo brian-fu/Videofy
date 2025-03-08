@@ -1,0 +1,92 @@
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.back-button .arrow {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.back-button:hover {
+    color: #ccc;
+}
+
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin: 0 auto;
+}
+
+.wrapper h1 {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.wrapper h2 {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #ffffff;
+}
+
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    border: 2px dashed #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.dropzone p {
+    font-size: 5px;
+}
+
+.upload-button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    display: block;
+    margin: 0 auto;
+}
+
+.upload-button:hover {
+    background-color: #f0f0f0;
+    backdrop-filter: blur(50px);
+}
