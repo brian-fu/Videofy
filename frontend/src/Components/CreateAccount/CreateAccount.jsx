@@ -49,7 +49,7 @@ const CreateAccount = () => {
     return (
         <div className='wrapper'>
             <form onSubmit={handleCreateAccount}>
-                <h1>Videofy</h1>
+                <div className='create-account-screen-header'>  Videofy</div>
 
                 <div className='input-box'>
                     <input type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />

@@ -66,7 +66,7 @@ const Login = () => {
     return (
         <div className='wrapper'>
             <form onSubmit={handleEmailLogin}>
-                <h1>Videofy</h1>
+                <div className='login-screen-header'>Videofy</div>
                 <CiCircleInfo 
                         onClick={() => setShowAbout(true)} 
                         className='info-icon'/>

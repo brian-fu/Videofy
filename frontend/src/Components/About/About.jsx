@@ -6,7 +6,7 @@ const About = ({ onClose }) => {
         <div className='about-overlay'>
             <div className='about-content'>
                 <h2>About Videofy</h2>
-                <p>Videofy instantly transforms your boring textbooks into a brainrot video with the click of a button!</p>
+                <p>Videofy instantly transforms your boring textbooks / slideshow PDFs into a brainrot video with the click of a button!</p>
                 <button onClick={onClose}>Close</button>
             </div>
         </div>
