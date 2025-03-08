@@ -4,8 +4,6 @@ import openai
 import os
 from dotenv import load_dotenv
 
-# Fix the path to point to the correct location of your .env file
-# Use absolute path or correct relative path
 dotenv_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 load_dotenv(dotenv_path=dotenv_path)
 
