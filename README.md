@@ -54,13 +54,13 @@ Have you ever been studying your textbook for a course and its so mind-numbingly
 
 This project was built with the popular FERN Stack along with Python for PDF content extraction and OpenAI API integration.
 
-![Firebase](https://img.shields.io/badge/Firebase-%23FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black) 
-![Express.js](https://img.shields.io/badge/Express.js-000000.svg?style=for-the-badge&logo=express&logoColor=white) 
-![React.js](https://img.shields.io/badge/React.js-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white) 
-![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white) 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) 
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+![Firebase](https://img.shields.io/badge/Firebase-%23FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black) <br />
+![Express.js](https://img.shields.io/badge/Express.js-000000.svg?style=for-the-badge&logo=express&logoColor=white) <br />
+![React.js](https://img.shields.io/badge/React.js-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white) <br />
+![Node.js](https://img.shields.io/badge/Node.js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white) <br />
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) <br />
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) <br />
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) <br />
 ![GPT-4](https://img.shields.io/badge/OpenAI_GPT--4-412991.svg?style=for-the-badge&logo=openai&logoColor=white) 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
