@@ -69,10 +69,9 @@ This project was built with the popular FERN Stack along with Python for PDF con
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Heres how you can set up the project locally and run it for yourself. 
 
-## Prerequisites:
+### Prerequisites:
 Node.js (v14 or higher) <br />
 Python (v3.8 or higher) <br />
 FFmpeg (for video processing)
