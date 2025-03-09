@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Videofy</h3>
+  <h1 align="center">VIDEOFY</h1>
 
   <p align="center">
     Transform your boring lecture notes into an engaging study video featuring Minecraft Parkour with the click of a button!
