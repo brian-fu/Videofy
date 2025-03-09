@@ -49,10 +49,8 @@ app.post('/api/upload-pdf', upload.single('pdf'), async (req, res) => {
     const pdfPath = req.file.path;
     const videoId = path.basename(pdfPath, path.extname(pdfPath));
     
-    // Here you would process the PDF with your business logic
-    // For example, convert it to a video using FFmpeg
+    /* TO DO: add pdf processing logic + ffmpeg video generation*/
     
-    // For now, we'll just return a success response
     res.json({ 
       success: true, 
       message: 'PDF uploaded successfully',
