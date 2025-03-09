@@ -11,10 +11,8 @@
   <p align="center">
     Transform your boring lecture notes into an engaging study video featuring Minecraft Parkour with the click of a button!
     <br />
-    <a href="https://github.com/brian-fu/Videofy"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    &middot;
   </p>
 </div>
 
