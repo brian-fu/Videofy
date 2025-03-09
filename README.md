@@ -98,13 +98,13 @@ FFmpeg (for video processing)
    mkdir -p backend/input backend/output
    ```
 3. Running the Program:
-  ```sh
+   ```sh
    cd backend
    node index.js
 
    cd ../frontend
    npm run dev
-  ```
+   ```
   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
