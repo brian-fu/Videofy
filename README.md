@@ -46,7 +46,7 @@
 
 ![Login Screen Preview](frontend/src/assets/readme-ss/login-screen-preview.jpg)
 
-Have you ever been studying your textbook for a course and its so mind-numbingly dull you just want to quit altogether? Well, look no further because Videofy has you covered. I created a simple and intuitive application that allows you to upload any PDF file and convert the contents into a "brain-rot" style video you might find on TikTok. So for those of you who can't focus for more than 5 minutes without scrolling on your phone, this is for you!
+Have you ever been studying your textbook for a course and its so mind-numbingly dull you just want to quit altogether? Well, look no further because Videofy has you covered. I created a simple and intuitive application that allows you to upload any PDF file and convert the contents into a "brain-rot" style video like the ones you might find on TikTok or Instagram Reels. So for those of you who can't focus for more than 5 minutes without scrolling on your phone, this is for you!
 
 
 
