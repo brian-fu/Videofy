@@ -73,8 +73,8 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ## Prerequisites:
-Node.js (v14 or higher)
-Python (v3.8 or higher)
+Node.js (v14 or higher)__
+Python (v3.8 or higher)__
 FFmpeg (for video processing)
 
 ### Installation
