@@ -65,9 +65,8 @@ This project was built with the popular FERN Stack along with Python for PDF con
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Video Demo
-Watch a simple demonstration of this application below!
-[![Watch the video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://youtu.be/SypH9FjR0Fs))
-
+Watch a simple demonstration of this application below!<br />
+[![Watch the video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://www.youtube.com/watch?v=SypH9FjR0Fs))
 
 
 <!-- GETTING STARTED -->
@@ -121,19 +120,6 @@ FFmpeg (for video processing)
 2. Upload a PDF document
 3. Wait for processing (the PDF will be converted to speech and combined with video)
 4. Preview and download your generated video
-
-## Screenshots
-
-### Create Account Preview
-![Create Account Preview](frontend/src/assets/readme-ss/create-account-preview.jpg)
-
-### Login Screen Preview
-![Login Screen Preview](frontend/src/assets/readme-ss/login-screen-preview.jpg)
-
-### Upload PDF File Preview
-![Upload PDF File Preview](frontend/src/assets/readme-ss/upload-pdf-file-preview.png)
-
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
