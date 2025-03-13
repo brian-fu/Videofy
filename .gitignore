@@ -26,3 +26,4 @@ dist-ssr
 .env
 python_env/
 output/
+input/
