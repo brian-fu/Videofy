@@ -66,7 +66,7 @@ This project was built with the popular FERN Stack along with Python for PDF con
 
 ## Video Demo
 Watch a simple demonstration of this application below!<br />
-[![Watch the video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://www.youtube.com/watch?v=SypH9FjR0Fs))
+[![Watch the video](https://img.youtube.com/vi/SypH9FjR0Fs/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://www.youtube.com/watch?v=SypH9FjR0Fs))
 
 
 <!-- GETTING STARTED -->
