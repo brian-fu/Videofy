@@ -142,7 +142,7 @@ def add_subtitles(video_path, output_path, subtitle_text, font_size=24, font_col
         print(f"Error adding subtitles: {e}")
         return None
 
-def create_srt_from_text(text, output_srt_path, words_per_subtitle=10, duration_per_word=0.4):
+def create_srt_from_text(text, output_srt_path, words_per_subtitle=10, duration_per_word=0.375):
     """
     Create an SRT subtitle file from text.
     
@@ -177,10 +177,10 @@ def create_srt_from_text(text, output_srt_path, words_per_subtitle=10, duration_
             
             # Add delay for periods (end of sentences)
             if word.endswith('.') or word.endswith('!') or word.endswith('?'):
-                segment_duration += 0.3  # 0.3 second pause for end of sentences
+                segment_duration += 0.3  
             # Add shorter delay for commas
             elif word.endswith(',') or word.endswith(';') or word.endswith(':'):
-                segment_duration += 0.15  # 0.15 second pause for commas and similar punctuation
+                segment_duration += 0.1  
         
         end_time = start_time + segment_duration
         current_time = end_time  # Update current time for next segment
