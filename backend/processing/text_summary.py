@@ -15,7 +15,7 @@ client = openai.OpenAI(api_key=api_key)
 
 def summarize_text(text):
     
-    prompt="Explain the following academic content in a way that can be used to create an engaging video with text-to-speech narration:"
+    prompt="You are the narrator of an explanation video. Explain the following academic content in a way that highlights the most important points and is engaging for the audience."
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[

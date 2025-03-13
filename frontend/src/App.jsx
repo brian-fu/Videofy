@@ -17,7 +17,7 @@ function App() {
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/upload" element={<UploadPdf />} />
         <Route path="/upload-pdf" element={<UploadPdf />} />
-        <Route path="/video-preview" element={<VideoPreview />} />
+        <Route path="/video-preview/:videoId" element={<VideoPreview />} />
       </Routes>
     </Router>
   )

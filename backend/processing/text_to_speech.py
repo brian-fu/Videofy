@@ -32,28 +32,22 @@ def text_to_speech(text, filename="summary.mp3", model="tts-1", voice="ash"):
     """
     file_path = os.path.join(INPUT_FOLDER, filename)
     
-    # Ensure input directory exists
-    if not os.path.exists(INPUT_FOLDER):
-        os.makedirs(INPUT_FOLDER)
-    
-    # Check if text is within the API limit (4096 characters)
+    # ensure text is within openai api limit (4096 characters)
     if len(text) <= 4000:
-        # Process the text directly
         response = client.audio.speech.create(
             model=model,
             voice=voice,
             input=text
         )
         
-        # Save the MP3 file
         with open(file_path, "wb") as f:
             f.write(response.content)
         
         print(f"MP3 file saved at {file_path}")
         return filename
     
-    # For long texts, split into chunks and process each chunk
-    print(f"Text is {len(text)} characters long. Splitting into chunks...")
+    # long texts must be split into chunks and merged
+    print(f"TEXT IS {len(text)} CHARACTERS LONG. SPLITTING INTO CHUNKS")
     
     # Create a temporary directory for chunk files
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -63,7 +57,7 @@ def text_to_speech(text, filename="summary.mp3", model="tts-1", voice="ash"):
         
         # Process each chunk
         for i, chunk in enumerate(chunks):
-            print(f"Processing chunk {i+1}/{len(chunks)}...")
+            print(f"PROCESSING CHUNK {i+1}/{len(chunks)}...")
             
             # Generate speech for the chunk
             response = client.audio.speech.create(

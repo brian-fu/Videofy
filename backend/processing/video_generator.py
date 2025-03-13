@@ -161,13 +161,29 @@ def create_srt_from_text(text, output_srt_path, words_per_subtitle=10, duration_
     
     # Create subtitle segments
     segments = []
+    current_time = 0.0
+    
     for i in range(0, len(words), words_per_subtitle):
         segment_words = words[i:i+words_per_subtitle]
         segment_text = ' '.join(segment_words)
         
-        # Calculate timing
-        start_time = i * duration_per_word
-        end_time = start_time + len(segment_words) * duration_per_word
+        # Calculate start time
+        start_time = current_time
+        
+        # Calculate end time with delays for punctuation
+        segment_duration = 0
+        for word in segment_words:
+            segment_duration += duration_per_word
+            
+            # Add delay for periods (end of sentences)
+            if word.endswith('.') or word.endswith('!') or word.endswith('?'):
+                segment_duration += 0.3  # 0.3 second pause for end of sentences
+            # Add shorter delay for commas
+            elif word.endswith(',') or word.endswith(';') or word.endswith(':'):
+                segment_duration += 0.15  # 0.15 second pause for commas and similar punctuation
+        
+        end_time = start_time + segment_duration
+        current_time = end_time  # Update current time for next segment
         
         # Format times as HH:MM:SS,mmm
         start_formatted = format_time(start_time)
@@ -225,11 +241,13 @@ def add_dynamic_subtitles(video_path, output_path, subtitle_text, font_size=24, 
         escaped_srt_path = temp_srt.replace('\\', '/').replace(':', '\\:').replace("'", "\\'")
         
         # Add subtitles to video
+        # Alignment=8 means center-top, 5 means center-middle, 2 means center-bottom
+        # Setting all margins to 0 and using Alignment=5 for center-middle
         cmd = [
             'ffmpeg',
             '-y',
             '-i', video_path,
-            '-vf', f"subtitles='{escaped_srt_path}':force_style='FontSize={font_size},PrimaryColour=&HFFFFFF,OutlineColour=&H000000,BorderStyle=1,Outline=1,BackColour=&H00000000,Alignment=5,MarginV=0'",
+            '-vf', f"subtitles='{escaped_srt_path}':force_style='FontSize={font_size},PrimaryColour=&HFFFFFF,OutlineColour=&H000000,BorderStyle=1,Outline=1,BackColour=&H00000000,Alignment=10,MarginV=10,MarginL=0,MarginR=0'",
             '-c:a', 'copy',
             output_path
         ]
@@ -316,10 +334,64 @@ def video_generator(audio_file, video_file, output_filename="final_video.mp4", s
     return output_path
 
 
-def generate_video_from_pdf(pdf_file_name):
-    text_extracted = extract_text(pdf_file_name)
-    text_summary = summarize_text(text_extracted)
-    text_to_speech_audio = text_to_speech(text_summary)
-    video_generator(text_to_speech_audio, PARKOUR_VIDEO, f"{pdf_file_name}.mp4", text_summary)
+def generate_video_from_pdf(pdf_filename, output_filename="final_video.mp4"):
+    """
+    Generate a video from a PDF file.
+    
+    Parameters:
+    - pdf_filename: Name of the PDF file in the input directory
+    - output_filename: Name of the output video file
+    """
+    try:
+        # Extract text from PDF
+        pdf_path = os.path.join(INPUT_FOLDER, pdf_filename)
+        print(f"Extracting text from {pdf_path}...")
+        text_extracted = extract_text(pdf_path)
+        
+        # Summarize text
+        print("Summarizing text...")
+        text_summary = summarize_text(text_extracted)
+        
+        # Convert text to speech
+        print("Converting text to speech...")
+        text_to_speech_audio = text_to_speech(text_summary)
+        
+        # Generate video with subtitles
+        print("Generating video with subtitles...")
+        output_path = video_generator(
+            text_to_speech_audio,
+            PARKOUR_VIDEO,
+            output_filename,
+            text_summary,
+            dynamic_subtitles=True
+        )
+        
+        print(f"Video generation complete: {output_path}")
+        return output_path
+    
+    except Exception as e:
+        print(f"Error generating video from PDF: {e}")
+        return None
 
-generate_video_from_pdf("modularization.pdf")
+if __name__ == "__main__":
+    import sys
+    
+    print("Starting video_generator.py script")
+    print(f"Arguments received: {sys.argv}")
+    
+    # Check if command-line arguments are provided
+    if len(sys.argv) >= 2:
+        pdf_filename = sys.argv[1]
+        print(f"PDF filename: {pdf_filename}")
+        
+        # Use provided output filename or default
+        output_filename = sys.argv[2] if len(sys.argv) >= 3 else "final_video.mp4"
+        print(f"Output filename: {output_filename}")
+        
+        # Generate video
+        print(f"Starting video generation process...")
+        result = generate_video_from_pdf(pdf_filename, os.path.join(OUTPUT_FOLDER, output_filename))
+        print(f"Video generation process completed with result: {result}")
+    else:
+        print("Usage: python video_generator.py <pdf_filename> [output_filename]")
+        sys.exit(1)
