@@ -1,5 +1,5 @@
 # .\python_env\Scripts\activate <- Command to activate the virtual environment
- 
+
 import openai
 import os
 from dotenv import load_dotenv
@@ -25,5 +25,3 @@ def summarize_text(text):
         max_tokens=10000,
     ) 
     return response.choices[0].message.content  
-
-print(summarize_text(""))

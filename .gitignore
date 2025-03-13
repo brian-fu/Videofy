@@ -27,3 +27,4 @@ dist-ssr
 python_env/
 output/
 input/
+__pycache__/

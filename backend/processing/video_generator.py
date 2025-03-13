@@ -5,7 +5,13 @@ import math
 import ffmpeg
 import textwrap
 import re
-import tempfile
+
+# helper functions
+
+from text_extraction import extract_text
+from text_summary import summarize_text
+from text_to_speech import text_to_speech
+
 
 # Get base directory
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -241,7 +247,7 @@ def add_dynamic_subtitles(video_path, output_path, subtitle_text, font_size=24, 
         print(f"Error adding dynamic subtitles: {e}")
         return None
 
-def generate_video(audio_path, video_path, output_filename="final_video.mp4", subtitle_text="", dynamic_subtitles=True):
+def video_generator(audio_file, video_file, output_filename="final_video.mp4", subtitle_text="", dynamic_subtitles=True):
     """
     Generate a video by combining audio with a video file.
     The video length will match the audio length.
@@ -254,6 +260,10 @@ def generate_video(audio_path, video_path, output_filename="final_video.mp4", su
     - subtitle_text: Text to display as subtitles
     - dynamic_subtitles: Whether to use dynamic subtitles that change with speech
     """
+
+    audio_path = os.path.join(INPUT_FOLDER, audio_file)
+    video_path = os.path.join(INPUT_FOLDER, video_file)
+
     # Ensure output folder exists
     if not os.path.exists(OUTPUT_FOLDER):
         os.makedirs(OUTPUT_FOLDER)
@@ -306,11 +316,10 @@ def generate_video(audio_path, video_path, output_filename="final_video.mp4", su
     return output_path
 
 
-# Example usage with dynamic subtitles
-generate_video(
-    os.path.join(BASE_DIR, "input", "wet_hands.mp3"), 
-    PARKOUR_VIDEO, 
-    os.path.join(OUTPUT_FOLDER, "combined_video.mp4"),
-    subtitle_text="This is an example of dynamic subtitles added to a Minecraft parkour video. The text will change as the narration progresses. This approach creates a more engaging viewing experience as viewers can follow along with what is being said at each moment. Dynamic subtitles are particularly helpful for educational content or tutorials where timing of information is important.",
-    dynamic_subtitles=True
-)
+def generate_video_from_pdf(pdf_file_name):
+    text_extracted = extract_text(pdf_file_name)
+    text_summary = summarize_text(text_extracted)
+    text_to_speech_audio = text_to_speech(text_summary)
+    video_generator(text_to_speech_audio, PARKOUR_VIDEO, f"{pdf_file_name}.mp4", text_summary)
+
+generate_video_from_pdf("modularization.pdf")
