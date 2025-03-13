@@ -64,6 +64,10 @@ This project was built with the popular FERN Stack along with Python for PDF con
 ![GPT-4](https://img.shields.io/badge/OpenAI_GPT--4-412991.svg?style=for-the-badge&logo=openai&logoColor=white) 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Video Demo
+Watch a simple demonstration of this application below!
+[![Watch the video](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID/0.jpg)]([https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID](https://youtu.be/SypH9FjR0Fs))
+
 
 
 <!-- GETTING STARTED -->
@@ -92,7 +96,7 @@ FFmpeg (for video processing)
   
    python -m venv python_env
    python_env\Scripts\activate
-   install openai python-dotenv pydub
+   pip install openai python-dotenv pydub pypdf
 
    mkdir -p backend/input backend/output
    ```
