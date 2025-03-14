@@ -49,38 +49,38 @@ def text_to_speech(text, filename="summary.mp3", model="tts-1", voice="ash"):
     # long texts must be split into chunks and merged
     print(f"TEXT IS {len(text)} CHARACTERS LONG. SPLITTING INTO CHUNKS")
     
-    # Create a temporary directory for chunk files
+    # create temp directory for chunk files
     with tempfile.TemporaryDirectory() as temp_dir:
         chunk_size = 4000  # Just under the 4096 limit
         chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
         chunk_files = []
         
-        # Process each chunk
+        # process each chunk
         for i, chunk in enumerate(chunks):
             print(f"PROCESSING CHUNK {i+1}/{len(chunks)}...")
             
-            # Generate speech for the chunk
+            # generate speech for chunk
             response = client.audio.speech.create(
                 model=model,
                 voice=voice,
                 input=chunk
             )
             
-            # Save the chunk to a temporary file
+            # save chunk to temp file
             chunk_file = os.path.join(temp_dir, f"chunk_{i}.mp3")
             with open(chunk_file, "wb") as f:
                 f.write(response.content)
             
             chunk_files.append(chunk_file)
         
-        # Combine all chunks into a single audio file
+        # combine all chunks into a single audio file
         print("Combining audio chunks...")
         combined = AudioSegment.empty()
         for chunk_file in chunk_files:
             audio_segment = AudioSegment.from_mp3(chunk_file)
             combined += audio_segment
         
-        # Export the combined audio
+        # export the combined audio
         combined.export(file_path, format="mp3")
         
         print(f"Combined MP3 file saved at {file_path}")
